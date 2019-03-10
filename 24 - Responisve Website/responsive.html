@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/style.css">
-  <link rel="stylesheet" href="./responsive-START.css">
+  <link rel="stylesheet" href="./responsive.css">
   <title>Responsive Website!</title>
 </head>
 
@@ -25,7 +25,6 @@
         <p class="price">$3.99</p>
         <p>Kombucha</p>
       </div>
-
     </div>
     <nav class="menu">
       <button aria-expanded="false" aria-controls="menu-list">
@@ -51,7 +50,6 @@
         </li>
       </ul>
     </nav>
-
     <section class="features">
       <div class="feature">
         <span class="icon">🌮</span>
@@ -74,7 +72,6 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, assumenda.</p>
       </div>
     </section>
-
     <section class="about">
       <img src="images/queso-taco.png" alt="Yummy Taco" class="about__mockup">
       <div class="about__details">
@@ -84,8 +81,6 @@
         <button>Learn More →</button>
       </div>
     </section>
-
-
     <section class="gallery">
       <h2>Instant Grams</h2>
       <img src="https://source.unsplash.com/random/201x201" alt="">
@@ -102,6 +97,13 @@
   </div>
 
   <script>
+    let navButton = document.querySelector('button[aria-expanded]');
+    navButton.addEventListener('click',toggleNav);
+    function toggleNav(event) {
+      const expanded = navButton.getAttribute('aria-expanded') === 'true' ? true:false;
+      navButton.setAttribute('aria-expanded', !expanded);
+      console.log(navButton.getAttribute('aria-expanded'))
+    }
   </script>
   
 </body>

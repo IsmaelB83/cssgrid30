@@ -1,0 +1,164 @@
+:root {
+  --grey: #343436;
+  --yellow: #ffc600;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma,
+    Sans-Serif;
+  font-weight: normal;
+  color: #272727;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* Base grid container */
+.codepen {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr 1fr auto;
+  height: 100vh;
+  color: white;
+}
+
+.codepen >* {
+  border: 1px solid black;
+}
+
+/* Header section*/
+.pen {
+  /* Start of grid layout */
+  display: grid;
+  /*grid-template-columns: 1fr auto auto auto auto auto;*/
+  grid-row: 1;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-gap: 10px;
+ /* End of grid layout*/
+  background: black;
+  padding: 20px;
+  padding-bottom: 10px;
+  border-bottom: 5px solid var(--grey);
+}
+
+/* Code section */
+.code {
+  display: grid;
+  grid-row: 2;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  background: #1b2b34;
+}
+
+.editor {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.editor__header {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 5px;
+  align-items: center;
+  background: rgba(0,0,0,0.1);
+}
+
+.editor__code {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  font-size: 18px;
+}
+
+.editor__gutter {
+  display: grid;
+  justify-content: center;
+  align-content: start;
+}
+
+.editor__number {
+  display: block;
+  padding: 0 10px;
+}
+
+.editor__input {
+  border: none;
+  color: grey;
+  background: none;
+  font-size: 16px;
+  line-height: 25px;
+  resize: none;
+}
+
+/* Preview section */
+.preview {
+  grid-row: 3;
+  background: black;
+}
+
+.preview iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Footer section */
+.settings {
+  grid-row: 4;
+  background: black;
+  grid-column: span 3;
+  padding: 7.5px;
+}
+
+/* Buttons */
+.button {
+  border: none;
+  background: var(--grey);
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  position: relative;
+}
+
+.button--small {
+  padding: 4px;
+  font-size: 12px;
+}
+
+.button.button--dirty:before {
+  background: var(--yellow);
+  display: block;
+  content: '';
+  height: 2px;
+  width: calc(100% - 6px);
+  position: absolute;
+  left: 3px;
+  top: 3px;
+}
+
+.button:hover {
+  color: var(--yellow);
+}
